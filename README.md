@@ -1,4 +1,4 @@
-# ly-app
+# MT-APP
 
 > My first-class Nuxt.js project
 
