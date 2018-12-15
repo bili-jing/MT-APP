@@ -19,6 +19,7 @@ import searchBar from './searchbar.vue';
 
 
 export default {
+  name:'Index',
   components: {
     topBar,
     searchBar
