@@ -5,11 +5,13 @@
         <emenu/>
       </el-col>
       <el-col :span="19">
-        <!-- <life/> -->2
+        <life/>
       </el-col>
     </el-row>
-    <el-row :span="24">
-      <!-- <artistic/> -->3
+    <el-row >
+      <el-col :span="24">
+        <artistic/>
+      </el-col>
     </el-row>
   </div>
 </template>

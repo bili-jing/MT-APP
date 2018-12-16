@@ -1,6 +1,6 @@
 <template>
-  <el-row 
-    :gutter="0" 
+  <el-row
+    :gutter="0"
     class="m-header">
     <el-col :span="5">
       <geo/>

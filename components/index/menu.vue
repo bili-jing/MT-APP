@@ -2,7 +2,7 @@
   <div class="m-menu">
     <dl 
       class="nav" 
-      @mouseleave="mouseleave">
+      @mouseleave="mouseleave">      
       <dt>全部分类</dt>
       <dd 
         v-for="(item,idx) in menu" 
