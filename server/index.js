@@ -10,11 +10,13 @@ import json from "koa-json";
 import dbConfig from "./dbs/config";
 import passport from "./interface/utils/passport";
 import users from "./interface/users";
+// const cors = require('@koa/cors');
 
 const app = new Koa();
 const host = process.env.HOST || "127.0.0.1";
 const port = process.env.PORT || 3000;
 
+// app.use(cors());
 app.keys = ["mt", "keyskeys"];
 app.proxy = true;
 app.use(session({ key: "mt", prefix: "mt:uid", store: new Redis() }));
@@ -22,6 +24,7 @@ app.use(bodyParser({
   extendTypes:['json','form','text']
 }))
 app.use(json())
+
 
 mongoose.connect(dbConfig.dbs,{
   useNewUrlParser:true

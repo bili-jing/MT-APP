@@ -12,7 +12,7 @@ let router = new Router({
 
 let Store = new Redis().client;
 
-router.post("/sigunp", async ctx => {
+router.post("/signup", async ctx => {
   const { username, password, email, code } = ctx.request.body;
 
   if (code) {
@@ -101,7 +101,7 @@ router.post("/signin", async (ctx, next) => {
         };
       }
     }
-  })(ctx.next);
+  })(ctx, next);
 });
 
 router.post("/verify", async (ctx, next) => {
@@ -118,6 +118,7 @@ router.post("/verify", async (ctx, next) => {
     host: Email.smtp.host,
     port: 587,
     secure: true,
+    // service: "qq",
     auth: {
       user: Email.smtp.user,
       pass: Email.smtp.pass
@@ -138,7 +139,7 @@ router.post("/verify", async (ctx, next) => {
   };
   await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.log("error");
+      return console.log(error);
     } else {
       Store.hmset(
         `nodemail:${ko.user}`,
@@ -159,7 +160,7 @@ router.post("/verify", async (ctx, next) => {
 
 //退出
 router.get("/exit", async (ctx, next) => {
-  await ctx.logOut();
+  await ctx.logout();
   if (!ctx.isAuthenticated()) {
     ctx.body = {
       code: 0
@@ -187,6 +188,4 @@ router.get("/getUser", async ctx => {
   }
 });
 
-
-
-export default router
+export default router;

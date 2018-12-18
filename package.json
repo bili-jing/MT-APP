@@ -13,13 +13,16 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@koa/cors": "^2.2.2",
     "@nuxtjs/axios": "^5.0.0",
+    "@types/crypto-js": "^3.1.43",
     "@types/koa-redis": "^3.0.2",
     "@types/koa-router": "^7.0.35",
     "@types/nodemailer": "^4.6.5",
     "axios": "^0.18.0",
     "babel-preset-es2015": "^6.24.1",
     "cross-env": "^5.2.0",
+    "crypto-js": "^3.1.9-1",
     "element-ui": "^2.4.6",
     "koa": "^2.5.2",
     "koa-bodyparser": "^4.2.1",
