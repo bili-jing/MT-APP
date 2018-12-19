@@ -46,7 +46,7 @@ router.post("/signup", async ctx => {
       code: -1,
       msg: "已被注册"
     };
-    return;
+    return ;
   }
 
   let nuser = await User.create({
@@ -115,10 +115,10 @@ router.post("/verify", async (ctx, next) => {
     return false;
   }
   let transporter = nodeMailer.createTransport({
-    host: Email.smtp.host,
-    port: 587,
-    secure: true,
-    // service: "qq",
+    // host: Email.smtp.host,
+    // port: 587,
+    // secure: false,
+    service: "qq",
     auth: {
       user: Email.smtp.user,
       pass: Email.smtp.pass
