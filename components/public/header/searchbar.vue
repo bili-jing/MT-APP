@@ -26,8 +26,8 @@
             class="hotPlace">
             <dt>热门搜索</dt>
             <dd 
-              v-for="(item,index) in hotPlace" 
-              :key="index">{{ item }}</dd>
+              v-for="(item,index) in $store.state.home.hotPlace.slice(0,4)" 
+              :key="index">{{ item.name }}</dd>
           </dl>
           <dl 
             v-if="isSearchList" 
@@ -38,11 +38,10 @@
           </dl>
         </div>
         <p class="suggest">
-          <a href="javascript:;">故宫博物院</a>
-          <a href="javascript:;">故宫博物院</a>
-          <a href="javascript:;">故宫博物院</a>
-          <a href="javascript:;">故宫博物院</a>
-          <a href="javascript:;">故宫博物院</a>
+          <a 
+            v-for="(item,index) in $store.state.home.hotPlace.slice(0,5)" 
+            :key="index" 
+            href="javascript:;">{{ item.name }}</a>
         </p>
         <ul class="nav">
           <li>
@@ -101,7 +100,7 @@ export default {
     return {
       isFocus: false,
       search: "",
-      hotPlace:['火锅','火锅','火锅','火锅','火锅'],
+      hotPlace:[],
       searchList:[]
     };
   },
