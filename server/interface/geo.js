@@ -1,16 +1,18 @@
-import Router from "koa-router";
-import axios from './utils/axios';
-import Province from '../dbs/models/province';
+import Router from 'koa-router'
+import axios from './utils/axios'
+import Menu from '../dbs/models/menu'
+import City from '../dbs/models/city'
 
-let router = new Router({ prefix: "/geo" });
-
-const sign = 'd8402a2d5ad7e02e80108270d71831cc';
+let router = new Router({prefix: '/geo'})
+// const sign = 'AJskjfsdjfkEakj19992sfS'
 
 router.get('/getPosition', async (ctx) => {
-  let { status, data: { province, city } } = await axios.get(`http://cp-tools.cn/geo/getPosition?sign=${sign}`)
+  let {status, data: {province, city}} = await axios.get(`http://cp-tools.cn/geo/getPosition?sign=d8402a2d5ad7e02e80108270d71831cc`)
+
   if (status === 200) {
     ctx.body = {
-      province, city
+      province,
+      city
     }
   } else {
     ctx.body = {
@@ -18,11 +20,8 @@ router.get('/getPosition', async (ctx) => {
       city: ''
     }
   }
+
 })
-
-
-//注释为本地数据:
-
 
 router.get('/province', async (ctx) => {
   // let province = await Province.find()
@@ -30,13 +29,15 @@ router.get('/province', async (ctx) => {
   //   province: province.map(item => {
   //     return {
   //       id: item.id,
-  //       name: item.value[0]
+  //       name:item.value[0]
   //     }
   //   })
   // }
-  let { status, data: {
-    province
-  } } = await axios.get(`http://cp-tools.cn/geo/province?sign=${sign}`)
+  let {
+    status, data: {
+      province
+    }
+  } = await axios.get(`http://cp-tools.cn/geo/province?sign=d8402a2d5ad7e02e80108270d71831cc`)
   ctx.body = {
     province: status === 200
       ? province
@@ -44,28 +45,14 @@ router.get('/province', async (ctx) => {
   }
 })
 
-router.get('/province/:id', async (ctx) => {
-  // let city = await City.findOne({id: ctx.params.id})
-  //
-  // ctx.body = {
-  //   code: 0,
-  //   city: city.value.map(item => {
-  //     return {province: item.province, id: item.id, name: item.name}
-  //   })
-  // }
-  let { status, data: {
-    city
-  } } = await axios.get(`http://cp-tools.cn/geo/province/${ctx.params.id}?sign=${sign}`)
-  if (status === 200) {
-    ctx.body = {
-      city
-    }
-  } else {
-    ctx.body = {
-      city: []
-    }
+router.get('/menu', async (ctx) => {
+  const result = await Menu.findOne()
+  ctx.body = {
+    menu: result.menu
   }
+
 })
+
 
 router.get('/city', async (ctx) => {
   // let city = []
@@ -85,9 +72,11 @@ router.get('/city', async (ctx) => {
   //     }
   //   })
   // }
-  let { status, data: {
-    city
-  } } = await axios.get(`http://cp-tools.cn/geo/city?sign=${sign}`);
+  let {
+    status, data: {
+      city
+    }
+  } = await axios.get(`http://cp-tools.cn/geo/city?sign=d8402a2d5ad7e02e80108270d71831cc`);
   if (status === 200) {
     ctx.body = {
       city
@@ -99,6 +88,28 @@ router.get('/city', async (ctx) => {
   }
 })
 
+router.get('/province/:id', async (ctx) => {
+  let city = await City.findOne({id: ctx.params.id})
+
+  ctx.body = {
+    code: 0,
+    city: city.value.map(item => {
+      return {province: item.province, id: item.id, name: item.name}
+    })
+  }
+  // let {status, data: {
+  //   city
+  // }} = await axios.get(`http://cp-tools.cn/geo/province/${ctx.params.id}?sign=${sign}`)
+  // if (status === 200) {
+  //   ctx.body = {
+  //     city
+  //   }
+  // } else {
+  //   ctx.body = {
+  //     city: []
+  //   }
+  // }
+})
 router.get('/hotCity', async (ctx) => {
   // let list = [
   //   '北京市',
@@ -120,9 +131,13 @@ router.get('/hotCity', async (ctx) => {
   // ctx.body = {
   //   hots: nList
   // }
-  let { status, data: {
-    hots
-  } } = await axios.get(`http://cp-tools.cn/geo/hotCity?sign=${sign}`);
+
+
+  let {
+    status, data: {
+      hots
+    }
+  } = await axios.get(`http://cp-tools.cn/geo/hotCity?sign=d8402a2d5ad7e02e80108270d71831cc`);
   if (status === 200) {
     ctx.body = {
       hots
@@ -134,23 +149,5 @@ router.get('/hotCity', async (ctx) => {
   }
 })
 
-router.get('/menu', async (ctx) => {
-  // const result = await Menu.findOne()
-  // ctx.body = {
-  //   menu: result.menu
-  // }
-  let { status, data: {
-    menu
-  } } = await axios.get(`http://cp-tools.cn/geo/menu?sign=${sign}`);
-  if (status === 200) {
-    ctx.body = {
-      menu
-    }
-  } else {
-    ctx.body = {
-      menu: []
-    }
-  }
-})
 
-export default router;
+export default router

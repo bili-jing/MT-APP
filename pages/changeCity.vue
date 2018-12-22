@@ -2,35 +2,38 @@
   <div class="page-changeCity">
     <el-row>
       <el-col :span="24">
-        <iSelect/>
+        <iselect></iselect>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="24">
-        <hot/>
+
+        <hot></hot>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="24">
-        <categroy/>
+        <categroy></categroy>
       </el-col>
     </el-row>
   </div>
+
+
 </template>
 
 <script>
-import iSelect from '@/components/changeCity/iselect.vue';
-import Hot from '@/components/changeCity/hot.vue';
-import Categroy from '@/components/changeCity/categroy.vue';
-export default {
-    components:{
-        iSelect,
-        Hot,
-        Categroy
+  import iselect from '@/components/changeCity/iselect'
+  import hot from '@/components/changeCity/hot'
+  import categroy from '@/components/changeCity/categroy'
+
+  export default {
+    name: "changeCity"
+    , components: {
+      iselect, hot, categroy
     }
-}
+  }
 </script>
 
-<style>
+<style lang="css">
 
 </style>

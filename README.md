@@ -1,6 +1,6 @@
-# MT-APP
+# mt-app
 
-> My first-class Nuxt.js project
+> My super-excellent Nuxt.js project
 
 ## Build Setup
 

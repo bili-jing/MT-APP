@@ -5,32 +5,30 @@
         <emenu/>
       </el-col>
       <el-col :span="19">
-        <life/>
+        <life></life>
       </el-col>
     </el-row>
     <el-row >
       <el-col :span="24">
-        <artistic/>
+        <artistic></artistic>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import Emenu from '@/components/index/menu.vue';
-import Life from '@/components/index/life.vue'
-import Artistic from '@/components/index/artistic.vue'
+  import Emenu from '@/components/index/Emenu.vue'
+  import  life from  '@/components/index/life.vue'
+  import  artistic from  '@/components/index/artistic.vue'
+  export default {
+    components: {
+      Emenu,life,
+      artistic
 
-export default {
-  components: {
-    Emenu,
-    Life,
-    Artistic
+    }
   }
-}
 </script>
 
-
 <style lang="scss">
- @import "@/assets/css/index/index.scss";
+  @import "@/assets/css/index/index.scss";
 </style>

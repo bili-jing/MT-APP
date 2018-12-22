@@ -204,9 +204,9 @@
           </dl>
           <dl>
             <dt>商家服务热线</dt><dd>外卖&amp;餐饮商家： <a
-              rel="nofollow"
-              href="tel:10105557"
-              target="_blank">10105557</a></dd>
+            rel="nofollow"
+            href="tel:10105557"
+            target="_blank">10105557</a></dd>
             <dd>休闲娱乐、丽人、ktv、教育、结婚、亲子、家装等商家： <a
               rel="nofollow"
               href="tel:10100107"
@@ -236,8 +236,8 @@
           <p>©网团购 meituan.com <a href="http://www.beianbeian.com/beianxinxi/283f39a9-4c00-427a-97ef-3c7a9e1e0af1.html">京ICP证070791号</a> <a href="http://www.miitbeian.gov.cn/">京ICP备10211739号</a> <a
             href="http://www.meituan.com/about/rules"
             target="_blank">电子公告服务规则</a></p><p><a
-              href="http://i.meituan.com/brunch/default/right"
-              target="_blank">广播电视节目制作经营许可证（京）字第03889号</a></p>
+          href="http://i.meituan.com/brunch/default/right"
+          target="_blank">广播电视节目制作经营许可证（京）字第03889号</a></p>
         </div>
         <div class="footer-copyright-right">
           <a
@@ -248,14 +248,14 @@
             href="http://www.meituan.com/about/openinfo"
             title="备案信息"
             target="_blank">备案信息</a><a
-              class="sp-ft sp-ft--knet"
-              href="http://t.knet.cn/index_new.jsp"
-              title="可信网站认证"
-              target="_blank">可信网站</a><a
-                class="sp-ft sp-ft--12315"
-                href="http://www.bj315.org/xfwq/lstd/201209/t20120910_3344.shtml?dnrpluojqxbceiqq"
-                title="12315消费争议"
-                target="_blank">12315消费争议</a></div></div>
+            class="sp-ft sp-ft--knet"
+            href="http://t.knet.cn/index_new.jsp"
+            title="可信网站认证"
+            target="_blank">可信网站</a><a
+            class="sp-ft sp-ft--12315"
+            href="http://www.bj315.org/xfwq/lstd/201209/t20120910_3344.shtml?dnrpluojqxbceiqq"
+            title="12315消费争议"
+            target="_blank">12315消费争议</a></div></div>
       </div>
     </div>
   </footer>
